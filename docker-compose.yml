@@ -24,7 +24,7 @@ services:
       - postgres
     env_file:
       - ./backend/.env.docker
-    command: npx nodemon --watch src --ext ts --exec "npx ts-node src/index.ts"
+    command: sh -c "npx prisma migrate deploy && npx ts-node prisma/seed.ts && npx ts-node-dev src/index.ts"
 
 
 volumes:

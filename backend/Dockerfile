@@ -10,6 +10,6 @@ COPY . .
 
 RUN npx prisma generate
 
-RUN npx prisma migrate deploy
+#RUN npx prisma migrate deploy
 
 CMD ["npx", "ts-node-dev", "src/index.ts"]
