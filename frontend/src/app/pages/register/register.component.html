@@ -1,0 +1,28 @@
+<div class="login-container">
+  <img src="assets/logo_tekna.svg" alt="Tekna Logo" class="logo" />
+
+  <h2>Cadastro</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="login-button" [disabled]="registerForm.invalid">
+      Register
+    </button>
+
+    <button mat-button color="primary" routerLink="/login">
+      Back to Login
+    </button>
+
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </form>
+</div>

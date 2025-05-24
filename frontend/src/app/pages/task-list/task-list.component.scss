@@ -1,0 +1,19 @@
+.task-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logout {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

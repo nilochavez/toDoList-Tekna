@@ -1,0 +1,44 @@
+.task-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 30px;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .logout-button {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.task-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .task-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+ .form-buttons {
+  display: flex;
+  gap: 30px; 
+  margin-top: 20px;
+
+  button {
+    min-width: 100px; 
+  }
+}
+
+}

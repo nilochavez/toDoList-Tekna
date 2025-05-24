@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>
+  Please confirm
+  <button mat-icon-button (click)="onCancel()" style="float: right;">
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+
+<mat-dialog-content>
+  <p>{{ data.message }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onConfirm()">OK</button>
+</mat-dialog-actions>
