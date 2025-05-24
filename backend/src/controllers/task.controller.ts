@@ -8,14 +8,19 @@ const taskService = new TaskService(prisma);
 export const getUserTasks: RequestHandler = async (req, res) => {
   try {
     const userId = (req as any).user.userId;
-
     const tasks = await taskService.getAllByUserId(userId);
 
-    res.status(200).json(tasks);
+    const formattedTasks = tasks.map(task => ({
+      ...task,
+      dueDate: task.dueDate.toISOString().split('T')[0]
+    }));
+
+    res.json(formattedTasks);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 export const createTask: RequestHandler = async (req, res) => {
   try {
@@ -64,6 +69,18 @@ export const updateTask: RequestHandler = async (req, res) => {
     res.status(200).json(task);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
+  }
+};
+
+export const getTaskById: RequestHandler = async (req, res) => {
+  const { id } = req.params;
+  const userId = (req as any).user.userId;
+  try {
+    const task = await taskService.getById(Number(id), userId);
+    res.json(task);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    res.status(404).json({ message });
   }
 };
 
