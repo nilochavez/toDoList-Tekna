@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import { swaggerOptions } from './config/swagger';
-
+import cors from 'cors';
 import authRoutes from './routes/auth.routes';
 import taskRoutes from './routes/task.routes';
 import { authMiddleware } from './middlewares/auth';
@@ -17,6 +17,7 @@ if (fs.existsSync('.env.local')) {
 }
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const specs = swaggerJsdoc(swaggerOptions);

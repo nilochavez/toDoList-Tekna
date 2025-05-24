@@ -64,6 +64,19 @@ export class TaskService {
     return this.prisma.task.delete({ where: { id } });
   }
 
+  async getById(id: number, userId: number) {
+  const task = await this.prisma.task.findUnique({
+    where: { id },
+  });
+
+  if (!task || task.userId !== userId) {
+    throw new Error('Task not found or unauthorized.');
+  }
+
+  return task;
+}
+
+
   
 }
 
