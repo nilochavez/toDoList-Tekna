@@ -5,7 +5,7 @@
       "use": "@vercel/static-build",
       "config": {
         "buildCommand": "npm install && npm run build:prod",
-        "distDir": "frontend/dist/<nome-do-seu-app>"
+        "distDir": "frontend/dist/frontend>"
       }
     }
   ],
