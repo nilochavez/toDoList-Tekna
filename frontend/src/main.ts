@@ -17,10 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    // 1) habilita as animações do Material (necessário para muitos componentes)
+    
     provideAnimations(),
 
-    // 2) importa módulos NgModule em providers (HttpClient + BrowserAnimations)
+    
     importProvidersFrom(
       HttpClientModule,
       BrowserAnimationsModule,
@@ -28,17 +28,17 @@ bootstrapApplication(AppComponent, {
       MatIconModule
     ),
 
-    // 3) mantém suas rotas e demais providers vindos de appConfig
+    
     ...appConfig.providers,
 
-    // 4) seu interceptor de autenticação
+    
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     },
 
-    // 5) seu serviço de loading
+    
     LoadingService
   ]
 })

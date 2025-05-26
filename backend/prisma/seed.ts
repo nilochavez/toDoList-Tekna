@@ -15,6 +15,10 @@ async function main() {
     },
   });
 
+  await prisma.task.deleteMany({
+    where: { userId: user.id }
+  });
+
   await prisma.task.createMany({
     data: [
       {
