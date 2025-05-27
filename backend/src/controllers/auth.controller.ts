@@ -22,6 +22,7 @@ export const registerUser: RequestHandler = async (req, res) => {
       },
     });
   } catch (error: any) {
+    console.error('Register error:', error);
     res.status(400).json({ error: error.message });
   }
 };
