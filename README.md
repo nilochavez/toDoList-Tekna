@@ -26,6 +26,27 @@ The backend is built with **Node.js + Express + Prisma + PostgreSQL**, and the f
 
 ---
 
+🌐 Deploy Links
+
+✅ Frontend (Vercel)
+
+URL: https://to-do-list-tekna.vercel.app/login
+
+Test User: admin@tekna.com
+
+Password: 123456
+
+
+✅ Backend (Render)
+
+URL: https://todolist-tekna.onrender.com
+
+Swagger (API Docs): https://todolist-tekna.onrender.com/api-docs
+
+
+
+---
+
 ## 📦 How to run locally
 
 ## 🔹 Backend
